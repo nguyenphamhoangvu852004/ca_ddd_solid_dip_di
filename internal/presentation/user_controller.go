@@ -1,21 +1,15 @@
-package controller
+package presentation
 
 import (
+	usecase "ca_ddd_solid_dip_di/internal/application/usecase/user"
 	"net/http"
-
-	"ca_ddd_solid_dip_di/internal/usecase"
 
 	"github.com/gin-gonic/gin"
 )
 
 type UserController struct {
-	createUserUseCase *usecase.CreateUser
-}
-
-func NewUserController(createUserUseCase *usecase.CreateUser) *UserController {
-	return &UserController{
-		createUserUseCase: createUserUseCase,
-	}
+	createUserUseCase *usecase.CreateUserUseCase
+	getUsersUseCase   *usecase.GetListUserUseCase
 }
 
 // GetUsers handles GET /users
@@ -31,4 +25,11 @@ func (uc *UserController) CreateUser(c *gin.Context) {
 	c.JSON(http.StatusCreated, gin.H{
 		"message": "User created successfully",
 	})
+}
+
+func NewUserController(createUserUseCase *usecase.CreateUserUseCase, getUsersUseCase *usecase.GetListUserUseCase) *UserController {
+	return &UserController{
+		createUserUseCase: createUserUseCase,
+		getUsersUseCase:   getUsersUseCase,
+	}
 }

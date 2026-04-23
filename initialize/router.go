@@ -1,20 +1,17 @@
 package initialize
 
 import (
-	"ca_ddd_solid_dip_di/initialize/dependency_injection"
-
 	"github.com/gin-gonic/gin"
 )
 
-func registerRouters(r *gin.RouterGroup) {
+func registerRouters(r *gin.RouterGroup, appManagement *AppManagement) {
 	// Initialize User module dependencies
-	userDI := dependency_injection.InitUserDependencies()
 
 	// User routes
 	{
 		usersGroup := r.Group("/users")
-		usersGroup.GET("", userDI.UserController.GetUsers)
-		usersGroup.POST("", userDI.UserController.CreateUser)
+		usersGroup.GET("", appManagement.UserController.GetUsers)
+		usersGroup.POST("", appManagement.UserController.CreateUser)
 	}
 
 	// Products routes (placeholder)

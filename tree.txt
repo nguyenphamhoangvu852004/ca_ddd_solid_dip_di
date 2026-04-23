@@ -1,0 +1,60 @@
+Folder PATH listing
+Volume serial number is B2E9-FEDA
+C:.
+¦   .gitignore
+¦   go.mod
+¦   go.sum
+¦   README.md
+¦   tree.txt
+¦   
++---cmd
+¦   +---mutex
+¦   ¦       main.go
+¦   ¦       
+¦   +---qr
+¦   ¦       main.go
+¦   ¦       
+¦   +---server
+¦   ¦       main.go
+¦   ¦       
+¦   +---test
++---initialize
+¦       application.go
+¦       dependency_injection.go
+¦       router.go
+¦       
++---internal
+    +---application
+    ¦   +---contract
+    ¦   ¦   +---cache
+    ¦   ¦   ¦       cache.go
+    ¦   ¦   ¦       
+    ¦   ¦   +---dto
+    ¦   ¦   +---mapper
+    ¦   +---usecase
+    ¦       +---auth
+    ¦       ¦       registrate.go
+    ¦       ¦       
+    ¦       +---user
+    ¦               create.go
+    ¦               get_list.go
+    ¦               
+    +---domain
+    ¦   +---entities
+    ¦   ¦       user.entity.go
+    ¦   ¦       
+    ¦   +---repository
+    ¦           user_repository.go
+    ¦           
+    +---infrastructure
+    ¦   +---cache
+    ¦   ¦       redis_cache_impl.go
+    ¦   ¦       
+    ¦   +---repository
+    ¦           user_repository_impl.go
+    ¦           
+    +---presentation
+        ¦   auth_controller.go
+        ¦   user_controller.go
+        ¦   
+        +---middleware

@@ -6,13 +6,13 @@ type UserRepositoryImpl struct {
 	// Mysql
 }
 
-// Create implements [domain_repository.IUserRepository].
-func (u *UserRepositoryImpl) Create() {
+// Get implements [domain_repository.IUserRepository].
+func (u *UserRepositoryImpl) Get(userID string) (interface{}, error) {
 	panic("unimplemented")
 }
 
-// Get implements [domain_repository.IUserRepository].
-func (u *UserRepositoryImpl) Get() {
+// Create implements [domain_repository.IUserRepository].
+func (u *UserRepositoryImpl) Create() {
 	panic("unimplemented")
 }
 

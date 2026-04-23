@@ -1,6 +1,6 @@
 package domain_repository
 
 type IUserRepository interface {
-	Get()
+	Get(userID string) (interface{}, error)
 	Create()
 }
